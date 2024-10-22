@@ -25,13 +25,29 @@ database.connect();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-	cors({
-		origin: "*",
-		// origin: "https://edtech-platform-z45z.onrender.com",
-		credentials: true,
-	})
-);
+
+
+// app.use(
+// 	cors({
+// 		origin: "*",
+// 		// origin: "https://edtech-platform-z45z.onrender.com",
+// 		credentials: true,
+// 	})
+// );
+
+const allowedOrigins = ['https://gyan-studynotion.vercel.app'];
+
+// CORS configuration
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true, // Allow credentials if needed
+}));
 app.use(
 	fileUpload({
 		useTempFiles: true,
