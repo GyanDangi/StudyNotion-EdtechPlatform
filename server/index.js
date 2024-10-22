@@ -27,7 +27,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin: "*",
+		// origin: "*",
+		origin: "https://ed-tech-platform-lime.vercel.app",
 		credentials: true,
 	})
 );
