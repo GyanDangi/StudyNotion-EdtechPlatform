@@ -27,8 +27,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		// origin: "*",
-		origin: "https://edtech-platform-z45z.onrender.com",
+		origin: "*",
+		// origin: "https://edtech-platform-z45z.onrender.com",
 		credentials: true,
 	})
 );
