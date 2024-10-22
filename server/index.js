@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(
 	cors({
 		// origin: "*",
-		origin: "https://ed-tech-platform-lime.vercel.app",
+		origin: "https://edtech-platform-z45z.onrender.com",
 		credentials: true,
 	})
 );
