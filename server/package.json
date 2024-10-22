@@ -28,6 +28,7 @@
     "nodemailer": "^6.9.15",
     "nodemon": "^2.0.22",
     "otp-generator": "^4.0.1",
-    "razorpay": "^2.9.4"
+    "razorpay": "^2.9.4",
+    "vercel": "^37.12.0"
   }
 }
