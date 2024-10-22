@@ -35,19 +35,20 @@ app.use(cookieParser());
 // 	})
 // );
 
-const allowedOrigins = ['https://gyan-studynotion.vercel.app'];
+// const allowedOrigins = ['https://gyan-studynotion.vercel.app'];
 
-// CORS configuration
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true, // Allow credentials if needed
-}));
+// // CORS configuration
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true, // Allow credentials if needed
+// }));
+app.use(cors());
 app.use(
 	fileUpload({
 		useTempFiles: true,
