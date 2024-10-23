@@ -109,7 +109,13 @@ export function login(email, password, navigate) {
       navigate("/dashboard/my-profile")
     } catch (error) {
       console.log("LOGIN API ERROR............", error)
-      toast.error("Login Failed")
+      if(error.response.data.message==="User is not Registered with Us Please SignUp to Continue"){
+        toast.error("User is not Registered with Us Please SignUp to Continue")
+        navigate("/signup")
+        }
+        else if(error.response.data.message==="Password is incorrect"){
+          toast.error("Password is incorrect")
+        }
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)
