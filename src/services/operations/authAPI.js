@@ -5,6 +5,9 @@ import { resetCart } from "../../slices/cartSlice"
 import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiConnector"
 import { endpoints } from "../apis"
+// import Signup from './../../pages/Signup';
+import { useNavigate } from 'react-router-dom';
+
 
 const {
   SENDOTP_API,
@@ -124,6 +127,7 @@ export function login(email, password, navigate) {
 
 export function getPasswordResetToken(email, setEmailSent) {
   return async (dispatch) => {
+    
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
@@ -132,6 +136,9 @@ export function getPasswordResetToken(email, setEmailSent) {
       })
 
       console.log("RESETPASSTOKEN RESPONSE............", response)
+      if(response.data.message===`This Email:${email} is not Registered With Us Enter a Valid Email `){
+        toast.error("Your email is not registerd with us.")
+      }
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -141,7 +148,8 @@ export function getPasswordResetToken(email, setEmailSent) {
       setEmailSent(true)
     } catch (error) {
       console.log("RESETPASSTOKEN ERROR............", error)
-      toast.error("Failed To Send Reset Email")
+      toast.error("this email is not register with us");
+      
     }
     toast.dismiss(toastId)
     dispatch(setLoading(false))
