@@ -156,14 +156,14 @@ function Navbar() {
               </button>
             </Link>
           )}
-          {token !== null && <ProfileDropdown />}
+          
         </div>
-        <button className="mr-4 block cursor-pointer  md:hidden" onClick={()=>(setShowMenu(!showMenu))}>
+        {token ?(<ProfileDropdown />):(<button className="mr-4 block cursor-pointer  md:hidden" onClick={()=>(setShowMenu(!showMenu))}>
           {showMenu ? (<RxCross1 className="text-white" fontSize={24} />):
           (< AiOutlineMenu fontSize={24} className="text-white"/>)}
            <div className={`absolute rounded-md z-10 md:hidden left-0 w-full right-30 justify-end top-11 bg-richblack-900  text-white flex flex-col items-end  gap-3
           font-bold text-lg ${showMenu ? "flex":"hidden"}`}>
-            <NavLink  className="bg-yellow-50 text-black mt-4 rounded-md w-[120px] px-7 mr-2 py-2 active:underline " to='/'>Home</NavLink>
+            <Link  className="bg-yellow-50 text-black mt-4 rounded-md w-[120px] px-7 mr-2 py-2 active:underline " to='/'>Home</Link>
             <Link className="bg-yellow-50 text-black  rounded-md px-7 w-[120px] py-2 mr-2" to='/about'>About</Link>
             <Link className="bg-yellow-50 text-black  rounded-md px-1 w-[120px] py-2 mr-2 "   to='/contact'>Contact Us</Link>
             <NavLink to='/signup'>
@@ -179,7 +179,8 @@ function Navbar() {
             
           </div>
 
-        </button>
+        </button>)  }
+        
        
       </div>
     </div>
