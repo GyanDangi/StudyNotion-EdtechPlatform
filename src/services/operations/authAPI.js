@@ -37,7 +37,11 @@ export function sendOtp(email, navigate) {
       navigate("/verify-email")
     } catch (error) {
       console.log("SENDOTP API ERROR............", error)
-      toast.error("Could Not Send OTP")
+      // toast.error("Could Not Send OTP")
+      if(error.response.data.message==='User is Already Registered'){
+        toast.error("User is Already Registered Please Login")
+        navigate('/login');
+      }
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)
