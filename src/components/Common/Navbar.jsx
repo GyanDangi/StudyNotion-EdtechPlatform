@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
 import { BsChevronDown } from "react-icons/bs"
 import { useSelector } from "react-redux"
-import { Link, matchPath, useLocation } from "react-router-dom"
+import { Link, matchPath, NavLink, useLocation } from "react-router-dom"
 
 import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { NavbarLinks } from "../../data/navbar-links"
@@ -10,6 +10,7 @@ import { apiConnector } from "../../services/apiConnector"
 import { categories } from "../../services/apis"
 import { ACCOUNT_TYPE } from "../../utils/constants"
 import ProfileDropdown from "../core/Auth/ProfileDropdown"
+import { RxCross1 } from "react-icons/rx";
 
 // const subLinks = [
 //   {
@@ -38,6 +39,8 @@ function Navbar() {
 
   const [subLinks, setSubLinks] = useState([])
   const [loading, setLoading] = useState(false)
+  const [showMenu, setShowMenu]= useState(false);
+
 
   useEffect(() => {
     (async () => {
@@ -64,13 +67,13 @@ function Navbar() {
         location.pathname !== "/" ? "bg-richblack-800" : ""
       } transition-all duration-200`}
     >
-      <div className="flex w-11/12 max-w-maxContent items-center justify-between">
+      <div className="flex w-11/12 relative max-w-maxContent items-center justify-between">
         {/* Logo */}
         <Link to="/">
           <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
         </Link>
         {/* Navigation links */}
-        <nav className="hidden md:block">
+        <nav className="hidden md:flex">
           <ul className="flex gap-x-6 text-richblack-25">
             {NavbarLinks.map((link, index) => (
               <li key={index}>
@@ -155,9 +158,29 @@ function Navbar() {
           )}
           {token !== null && <ProfileDropdown />}
         </div>
-        <button className="mr-4 md:hidden">
-          <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+        <button className="mr-4 block cursor-pointer  md:hidden" onClick={()=>(setShowMenu(!showMenu))}>
+          {showMenu ? (<RxCross1 className="text-white" fontSize={24} />):
+          (< AiOutlineMenu fontSize={24} className="text-white"/>)}
+           <div className={`absolute rounded-md z-10 md:hidden left-0 w-full right-30 justify-end top-11 bg-richblack-900  text-white flex flex-col items-end  gap-3
+          font-bold text-lg ${showMenu ? "flex":"hidden"}`}>
+            <NavLink  className="bg-yellow-50 text-black mt-4 rounded-md w-[120px] px-7 mr-2 py-2 active:underline " to='/'>Home</NavLink>
+            <Link className="bg-yellow-50 text-black  rounded-md px-7 w-[120px] py-2 mr-2" to='/about'>About</Link>
+            <Link className="bg-yellow-50 text-black  rounded-md px-1 w-[120px] py-2 mr-2 "   to='/contact'>Contact Us</Link>
+            <NavLink to='/signup'>
+              <button className="rounded-[8px] border border-richblack-700 mr-2 w-[120px] bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+                  Sign up
+              </button>
+            </NavLink>
+            <NavLink to='/login'>
+              <button  className="rounded-[8px] border border-richblack-700 w-[120px] mr-2 bg-richblack-800 px-[18px] py-[8px] mb-4 text-richblack-100">
+                  Log in
+              </button>
+            </NavLink>
+            
+          </div>
+
         </button>
+       
       </div>
     </div>
   )

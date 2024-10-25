@@ -33,12 +33,14 @@ export default function RenderSteps() {
               key={item.id}
             >
               <button
-                className={`grid cursor-default aspect-square w-[34px] place-items-center rounded-full border-[1px] ${
+                className={`grid cursor-default aspect-square w-[34px] place-items-center rounded-full border-[1px] 
+                  ${
                   step === item.id
                     ? "border-yellow-50 bg-yellow-900 text-yellow-50"
                     : "border-richblack-700 bg-richblack-800 text-richblack-300"
-                } ${step > item.id && "bg-yellow-50 text-yellow-50"}} `}
+                } ${step > item.id && "bg-yellow-50 text-yellow-50"}`}
               >
+                {/* all the details are field in the current steps and now we are in next step isiliye isko completed mark kr deng */}
                 {step > item.id ? (
                   <FaCheck className="font-bold text-richblack-900" />
                 ) : (
@@ -47,6 +49,7 @@ export default function RenderSteps() {
               </button>
               
             </div>
+            {/* code for adding dashes between the label */}
             {item.id !== steps.length && (
               <>
                 <div
