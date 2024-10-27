@@ -24,6 +24,7 @@ export default function Upload({
   const inputRef = useRef(null)
 
   const onDrop = (acceptedFiles) => {
+    console.log(acceptedFiles)
     const file = acceptedFiles[0]
     if (file) {
       previewFile(file)
@@ -32,17 +33,16 @@ export default function Upload({
   }
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    accept: !video
-      ? { "image/*": [".jpeg", ".jpg", ".png"] }
-      : { "video/*": [".mp4"] },
+    accept: video ? "video/mp4" : "image/jpeg, image/png",
     onDrop,
-  })
+  });
+  
 
   const previewFile = (file) => {
-    // console.log(file)
+    console.log(file)
     const reader = new FileReader()
     reader.readAsDataURL(file)
-    reader.onloadend = () => {
+    reader.onload = () => {
       setPreviewSource(reader.result)
     }
   }
@@ -63,10 +63,14 @@ export default function Upload({
         {label} {!viewData && <sup className="text-pink-200">*</sup>}
       </label>
       <div
-        className={`${
-          isDragActive ? "bg-richblack-600" : "bg-richblack-700"
-        } flex min-h-[250px] cursor-pointer items-center justify-center rounded-md border-2 border-dotted border-richblack-500`}
-      >
+  className={`${
+    
+    isDragActive ? "bg-richblack-600" : "bg-richblack-700"
+  } flex min-h-[250px] cursor-pointer items-center justify-center rounded-md border-2 border-dotted border-richblack-500`}
+>
+  {/* <input {...getInputProps()} ref={inputRef} />   Input should stay hidden */}
+  <input {...getInputProps()} />   
+
         {previewSource ? (
           <div className="flex w-full flex-col p-6">
             {!video ? (
@@ -113,6 +117,7 @@ export default function Upload({
           </div>
         )}
       </div>
+
       {errors[name] && (
         <span className="ml-2 text-xs tracking-wide text-pink-200">
           {label} is required
