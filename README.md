@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/07b139f2-7171-49df-9e2f-a2a7198cc171)
+
 # Study Notion EdTech Platform
 
 EdTech Platform is a comprehensive online education platform designed to offer a seamless learning experience. It supports various user roles, including instructors, admins, and students, allowing each role to interact with the platform in unique ways. With built-in features like course management, payment integration, and dashboards, it’s designed to simplify online learning and teaching.
@@ -81,6 +81,7 @@ cd client
 npm install
 
 Install these all dependencies:
+
 "dependencies": {
     "@nestjs/mongoose": "^10.0.10",
     "@ramonak/react-progress-bar": "^5.3.0",
