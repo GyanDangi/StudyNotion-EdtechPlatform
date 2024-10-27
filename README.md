@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/07b139f2-7171-49df-9e2f-a2a7198cc171)
 # Study Notion EdTech Platform
 
 EdTech Platform is a comprehensive online education platform designed to offer a seamless learning experience. It supports various user roles, including instructors, admins, and students, allowing each role to interact with the platform in unique ways. With built-in features like course management, payment integration, and dashboards, it’s designed to simplify online learning and teaching.
@@ -18,18 +18,36 @@ Here are some screenshots to give you an overview of the EdTech Platform:
 1. Home Page
 The landing page showcases the available courses, with options for users to log in, register, and explore popular courses.
 
-2. Instructor Dashboard
-Instructors can create new courses, monitor enrollments, and access feedback. This dashboard simplifies course management and enables instructors to track their course impact.
+![image](https://github.com/user-attachments/assets/4282f6f2-b854-43d2-a603-af0f92792a42)
 
-3. Student Dashboard
+
+3. Instructor Dashboard
+Instructors can create new courses, monitor enrollments, and access feedback. This dashboard simplifies course management and enables instructors to track their course impact.
+![image](https://github.com/user-attachments/assets/6f5ae244-2e09-4424-b86d-ad51c1612655)
+
+4. Student Dashboard
 
 Students can browse enrolled courses, track progress, and receive personalized recommendations based on completed courses.
+![image](https://github.com/user-attachments/assets/eb3e7a56-7668-491b-98c3-5a8bdbebac76)
+
+![image](https://github.com/user-attachments/assets/1e0a0854-dcb6-4059-947c-83be32493ec8)
+![image](https://github.com/user-attachments/assets/c4139902-2526-460f-9747-59aa25b0d3dd)
+
 
 4. Payment Gateway
+ ![image](https://github.com/user-attachments/assets/fd02ccda-8c4c-4b38-8bea-0f4bd203a441)
+![image](https://github.com/user-attachments/assets/af04bbaf-896e-446a-a60c-143ed135ccc4)
+
+![image](https://github.com/user-attachments/assets/dfad62bc-4d8a-46a5-8393-39b434f1eb22)
+
+
 
 A seamless checkout experience allows students to securely purchase courses. The platform supports multiple payment options, providing flexibility for users.
 
 5. Course Detail Page
+![image](https://github.com/user-attachments/assets/df8d3dbc-e229-4f0e-875b-997c81ca9313)
+![image](https://github.com/user-attachments/assets/23d422dd-8c40-4d9d-99de-e41a89171e7e)
+
 
 Detailed course information is displayed here, including course content, instructor details, and reviews.
 ## Features
