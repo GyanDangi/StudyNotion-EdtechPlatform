@@ -10,7 +10,7 @@
   "keywords": [
     "studynotion-backend"
   ],
-  "author": "Saikat Mukherjee",
+  "author": "Gyan Prakash Dangi",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
