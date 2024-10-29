@@ -17,7 +17,7 @@ import TimelineSection from "../components/core/HomePage/Timeline"
 
 function Home() {
   return (
-    <div>
+    <div className="w-screen">
       {/* Section 1 */}
       <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
         {/* Become a Instructor Button */}
@@ -185,7 +185,9 @@ function Home() {
         <h1 className="text-center text-4xl font-semibold mt-8">
           Reviews from other learners
         </h1>
-        <ReviewSlider />
+            <div className=" w-full ">
+            <ReviewSlider />
+            </div>
       </div>
 
       {/* Footer */}

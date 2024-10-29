@@ -36,8 +36,8 @@ function ReviewSlider() {
   // console.log(reviews)
 
   return (
-    <div className="text-white">
-      <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">
+    <div className="text-white w-full ">
+      <div className="my-10 w-[1100px] lg:w-full flex  justify-center items-center  lg:max-w-maxContent">
         <Swiper
           slidesPerView={4}
           spaceBetween={25}
@@ -48,13 +48,13 @@ function ReviewSlider() {
             disableOnInteraction: false,
           }}
           modules={[FreeMode, Pagination, Autoplay]}
-          className="w-full "
+          className=" w-full flex items-center justify-center"
         >
           {reviews.map((review, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="flex flex-col gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25">
-                  <div className="flex items-center gap-4">
+                <div className="flex flex-col  gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25">
+                  <div className="flex flex-col lg:flex-row items-center gap-4">
                     <img
                       src={
                         review?.user?.image
