@@ -153,7 +153,7 @@ function App() {
         </Route>
 
         {/* 404 Page */}
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<Home/>} />
       </Routes>
     </div>
   )
