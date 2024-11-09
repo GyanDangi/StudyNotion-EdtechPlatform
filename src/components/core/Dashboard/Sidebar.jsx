@@ -7,6 +7,7 @@ import { sidebarLinks } from "../../../data/dashboard-links"
 import { logout } from "../../../services/operations/authAPI"
 import ConfirmationModal from "../../Common/ConfirmationModal"
 import SidebarLink from "./SidebarLink"
+import { AiOutlineMenu } from "react-icons/ai"
 
 export default function Sidebar() {
   const { user, loading: profileLoading } = useSelector(
@@ -15,6 +16,7 @@ export default function Sidebar() {
   const { loading: authLoading } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const [showMenu, setShowMenu]= useState(false);
   // to keep track of confirmation modal
   const [confirmationModal, setConfirmationModal] = useState(null)
 
@@ -28,8 +30,9 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
-        <div className="flex flex-col">
+      <div className={`flex h-[calc(100vh-3.5rem)] relative ${showMenu ? "min-w-[220px]" :"w-[30px]"}  flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10`}>
+        < AiOutlineMenu  fontSize={24} onClick={()=>(setShowMenu(!showMenu))} className="text-white absolute top-[3px] right-[2px]"/>
+        <div className={`${showMenu ? "flex flex-col" :"hidden"}`}>
           {sidebarLinks.map((link) => {
             if (link.type && user?.accountType !== link.type) return null
             return (
@@ -37,8 +40,8 @@ export default function Sidebar() {
             )
           })}
         </div>
-        <div className="mx-auto mt-6 mb-6 h-[1px] w-10/12 bg-richblack-700" />
-        <div className="flex flex-col">
+        {/* <div className="mx-auto  mt-6 mb-6 h-[1px]  w-10/12 bg-richblack-700" /> */}
+        <div className={`${showMenu ? "flex flex-col" :"hidden"}`}>
           <SidebarLink
             link={{ name: "Settings", path: "/dashboard/settings" }}
             iconName="VscSettingsGear"
