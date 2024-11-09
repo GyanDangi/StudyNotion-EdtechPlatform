@@ -166,6 +166,7 @@ function Navbar() {
             <Link  className="bg-yellow-50 text-black mt-4 rounded-md w-[120px] px-7 mr-2 py-2 active:underline " to='/'>Home</Link>
             <Link className="bg-yellow-50 text-black  rounded-md px-7 w-[120px] py-2 mr-2" to='/about'>About</Link>
             <Link className="bg-yellow-50 text-black  rounded-md px-1 w-[120px] py-2 mr-2 "   to='/contact'>Contact Us</Link>
+            <Link className="bg-yellow-50 text-black  rounded-md px-1 w-[120px] py-2 mr-2 "   to='/catalog/devops'>Courses</Link>
             <NavLink to='/signup'>
               <button className="rounded-[8px] border border-richblack-700 mr-2 w-[120px] bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
                   Sign up
