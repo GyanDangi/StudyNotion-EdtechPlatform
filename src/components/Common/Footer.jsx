@@ -2,12 +2,13 @@ import React from "react"
 // Icons
 import {
   FaCopyright,
-  FaFacebook,
-  FaGoogle,
+  FaGithub,
   FaHeart,
+  FaInstagram,
   FaTwitter,
-  FaYoutube,
 } from "react-icons/fa"
+import {  FaLinkedinIn } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom"
 
 // Images
@@ -53,10 +54,11 @@ const Footer = () => {
                 })}
               </div>
               <div className="flex gap-3 text-lg">
-                <FaFacebook />
-                <FaGoogle />
-                <FaTwitter />
-                <FaYoutube />
+                <Link to='https://www.instagram.com/gyan_dangi/'><FaInstagram className="hover:scale-125 transition-all duration-75 hover:text-pink-300" /></Link>
+                <Link to='https://x.com/Gyan8356'><FaTwitter className="hover:scale-125 transition-all duration-75 hover:text-blue-100" /></Link>
+                <Link to='https://github.com/GyanDangi'><FaGithub className="hover:scale-125 transition-all duration-75 hover:text-white" /></Link>
+                <Link to='https://www.linkedin.com/in/gyandangi/'><FaLinkedinIn className="hover:scale-125 transition-all duration-75 hover:text-white
+                 hover:bg-blue-200 rounded-sm px-[2px]" /></Link>
               </div>
               <div></div>
             </div>
