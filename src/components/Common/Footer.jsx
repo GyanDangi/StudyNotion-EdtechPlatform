@@ -175,7 +175,7 @@ const Footer = () => {
             <FaHeart color="#e6005c" />
             GyanPrakash
             <FaCopyright />
-            2024 StudyNotion
+            {`${new Date().getFullYear()}`}
           </div>
         </div>
       </div>
